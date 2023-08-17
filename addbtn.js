@@ -52,7 +52,6 @@ function toggled() {
   setTimeout(secfuncfinal, 3000);
 }
 
-
 let timeout1id;
 let timeout2id;
 let check = 0; //check if the code has reached the end
@@ -79,3 +78,24 @@ function cartadd() {
   }
   check = 0;
 }
+
+//Messaging app
+let messages = 0;
+function dfunction(param) {
+  if (param === `send`) {
+    messages = messages + 1;
+  } else if (param === `delete`) {
+    messages = messages - 1;
+  }
+
+  if (messages < 0) {
+    messages = 0;
+    document.title = `App`;
+  } else {
+    document.title = `(${messages})New messages`;
+  }
+}
+
+const pagetitle = function (param) {
+  setInterval(dfunction(param), 1000);
+};
