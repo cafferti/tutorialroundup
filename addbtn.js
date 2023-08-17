@@ -51,6 +51,8 @@ function toggled() {
   setTimeout(secfunc, 1000);
   setTimeout(secfuncfinal, 3000);
 }
+
+
 let timeout1id;
 let timeout2id;
 let check = 0; //check if the code has reached the end
@@ -58,26 +60,22 @@ function cartadd() {
   text = document.querySelector(`.ep`);
   btn = document.querySelector(`.js-cartbtn`);
   const added = function () {
-    check = 1
+    check = 1;
     text.innerHTML = `Added`;
   };
   const removetext = function () {
-    check = 2
+    check = 2;
     text.innerHTML = ``;
-    
   };
 
-  
-
   if (check === 0) {
-     timeout1id = setTimeout(added, 1000);
-     timeout2id = setTimeout(removetext, 3000);
-    check = 0
-  }else{
-    clearTimeout(timeout1id)
-    clearTimeout(timeout2id)
     timeout1id = setTimeout(added, 1000);
     timeout2id = setTimeout(removetext, 3000);
-    check = 0
+  } else {
+    clearTimeout(timeout1id);
+    clearTimeout(timeout2id);
+    timeout1id = setTimeout(added, 1000);
+    timeout2id = setTimeout(removetext, 3000);
   }
+  check = 0;
 }
