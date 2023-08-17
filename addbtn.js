@@ -51,3 +51,18 @@ function toggled() {
   setTimeout(secfunc, 1000);
   setTimeout(secfuncfinal, 3000);
 }
+
+function cartadd(){
+    text = document.querySelector(`.ep`) 
+    btn = document.querySelector(`.js-cartbtn`) 
+    const added = function(){
+        text.innerHTML = `Added`
+    }
+    const removetext = function(){
+        text.innerHTML = ``
+    }
+
+    setTimeout(added, 1000)
+    setTimeout(removetext, 3000)
+    
+}
